@@ -1,0 +1,276 @@
+.bookDetails_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 4rem;
+  position: relative;
+  font-weight: 600;
+  /*   p {
+    min-width: 215px;
+  } */
+}
+
+.bookDetails_wrapper h2 {
+  position: relative;
+  color: #fff;
+  font-size: calc(2rem + 1vw);
+  background: -webkit-linear-gradient(#afaeae, #565656);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+.bookDetails_wrapper::after {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  bottom: -20%;
+  top: 50%;
+  left: 0%;
+  right: 60%;
+  background-color: blueviolet;
+  -webkit-filter: blur(100px);
+          filter: blur(100px);
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.bookDetails_wrapper::before {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  top: -20%;
+  bottom: 50%;
+  right: 0%;
+  left: 60%;
+  background-color: #2727fd;
+  -webkit-filter: blur(100px);
+          filter: blur(100px);
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.bookDetails_wrapper .bookDetail {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  max-width: 1000px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  border: 1px solid white;
+  padding: 1em;
+  margin: 1rem;
+  border-radius: 1rem;
+  -webkit-box-shadow: inset 0 0 155px 15px rgba(255, 255, 255, 0.096);
+          box-shadow: inset 0 0 155px 15px rgba(255, 255, 255, 0.096);
+  overflow: hidden;
+}
+
+.bookDetails_wrapper .image {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0px;
+          flex: 1 1 0px;
+  padding: 1em;
+  text-align: center;
+  max-height: 600px;
+  min-width: 320px;
+  max-width: 380px;
+  overflow: hidden;
+}
+
+.bookDetails_wrapper .image img {
+  opacity: 1;
+  height: 100%;
+  width: 100%;
+  -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.233);
+          box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.233);
+  border-radius: 1rem;
+  -webkit-transition: all 0.5s cubic-bezier(0.75, 0, 0.85, 0.45);
+  transition: all 0.5s cubic-bezier(0.75, 0, 0.85, 0.45);
+  /* all 0.5s cubic-bezier(.32,-0.56,.85,.45) */
+  overflow: hidden;
+}
+
+.bookDetails_wrapper .image .quote_wrapper {
+  display: none;
+}
+
+.bookDetails_wrapper i {
+  margin: 0 0.2rem;
+}
+
+.bookDetails_wrapper .details {
+  min-width: 270px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0px;
+          flex: 1 1 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  gap: 1.3rem;
+  padding: 1em;
+}
+
+.bookDetails_wrapper .details table {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0%;
+          flex: 1 1 0%;
+  font-size: 1em;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.bookDetails_wrapper .details table td {
+  margin: 0px 4px;
+  padding: 0.3em;
+}
+
+.bookDetails_wrapper .details a {
+  color: var(--color-colored2);
+}
+
+.bookDetails_wrapper .details a:hover {
+  text-decoration: underline;
+}
+
+.bookDetails_wrapper .details .book_description {
+  position: relative;
+  padding: 0.5rem;
+}
+
+.bookDetails_wrapper .details .book_description::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 50%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(var(--color-background-trans)));
+  background: linear-gradient(rgba(255, 255, 255, 0), var(--color-background-trans));
+}
+
+.bookDetails_wrapper .details .book_description blockquote {
+  opacity: 0.6;
+  max-height: 50px;
+  overflow: hidden;
+}
+
+.bookDetails_wrapper .details .book_description h3 {
+  color: var(--color-colored2);
+  cursor: pointer;
+  z-index: 1;
+  opacity: 1;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+.bookDetails_wrapper .details .book_description h3:hover {
+  opacity: 0.7;
+}
+
+.bookDetails_wrapper .details #desctiption_checkbox:checked ~ table,
+.bookDetails_wrapper .details #desctiption_checkbox:checked ~ .rating {
+  display: none;
+}
+
+.bookDetails_wrapper .details #desctiption_checkbox:checked ~ .book_description blockquote {
+  max-height: none;
+  opacity: 1;
+}
+
+.download_section {
+  margin: 1rem 1rem 5rem 1rem;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: var(--color-colored);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.download_section .content {
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-left: 1px solid #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+.download_section .content::after {
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+  position: absolute;
+  content: "";
+  top: -10%;
+  width: 5%;
+  left: 0%;
+  bottom: -10%;
+  background-color: #fff;
+  z-index: -1;
+}
+
+.download_section p {
+  font-weight: 800;
+}
+
+.download_section a {
+  color: unset;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.download_section .fa {
+  padding: 5px;
+  font-size: 2rem;
+}
+
+.download_section .content:hover,
+.download_section .content:focus {
+  color: black;
+  mix-blend-mode: exclusion;
+}
+
+.download_section .content:hover::after,
+.download_section .content:focus::after {
+  width: 100%;
+}
+/*# sourceMappingURL=book.css.map */

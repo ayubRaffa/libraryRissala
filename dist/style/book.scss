@@ -1,0 +1,197 @@
+.bookDetails_wrapper {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  position: relative;
+  font-weight: 600;
+
+  h2 {
+    position: relative;
+    color: #fff;
+    font-size: calc(2rem + 1vw);
+    background: -webkit-linear-gradient(rgb(175, 174, 174), rgb(86, 86, 86));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  }
+  /*   p {
+    min-width: 215px;
+  } */
+  &::after {
+    position: absolute;
+    content: "";
+    border-radius: 50%;
+    bottom: -20%;
+    top: 50%;
+    left: 0%;
+    right: 60%;
+    background-color: blueviolet;
+    filter: blur(100px);
+    opacity: 0.5;
+    z-index: -1;
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    border-radius: 50%;
+    top: -20%;
+    bottom: 50%;
+    right: 0%;
+    left: 60%;
+    background-color: rgb(39, 39, 253);
+    filter: blur(100px);
+    opacity: 0.5;
+    z-index: -1;
+  }
+
+  .bookDetail {
+    flex: 1 1 auto;
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-flow: row wrap;
+    border: 1px solid white;
+    padding: 1em;
+    margin: 1rem;
+    border-radius: 1rem;
+    box-shadow: inset 0 0 155px 15px rgba(255, 255, 255, 0.096);
+    //    position: relative;
+    overflow: hidden;
+  }
+  .image {
+    flex: 1 1 0px;
+    padding: 1em;
+    text-align: center;
+    max-height: 600px;
+    min-width: 320px;
+    max-width: 380px;
+    overflow: hidden;
+    img {
+      opacity: 1;
+      height: 100%;
+      width: 100%;
+      box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.233);
+      border-radius: 1rem;
+      transition: all 0.5s cubic-bezier(0.75, 0, 0.85, 0.45); /* all 0.5s cubic-bezier(.32,-0.56,.85,.45) */
+      overflow: hidden;
+    }
+
+    .quote_wrapper {
+      display: none;
+    }
+  }
+  i {
+    margin: 0 0.2rem;
+  }
+  .details {
+    min-width: 270px;
+    flex: 1 1 0px;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: column nowrap;
+    gap: 1.3rem;
+    padding: 1em;
+    table {
+      flex: 1 1 0%;
+      font-size: 1em;
+      transition: all 0.5s;
+      td {
+        margin: 0px 4px;
+        padding: 0.3em;
+      }
+    }
+    a {
+      color: var(--color-colored2);
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    .book_description {
+      position: relative;
+      padding: 0.5rem;
+      &::after {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 50%;
+        background: linear-gradient(rgba(255, 255, 255, 0), var(--color-background-trans));
+      }
+      blockquote {
+        opacity: 0.6;
+        max-height: 50px;
+        overflow: hidden;
+      }
+      h3 {
+        color: var(--color-colored2);
+        cursor: pointer;
+        z-index: 1;
+        opacity: 1;
+        transition: opacity 0.5s;
+      }
+      h3:hover {
+        opacity: 0.7;
+      }
+    }
+    #desctiption_checkbox:checked ~ table,
+    #desctiption_checkbox:checked ~ .rating {
+      display: none;
+    }
+    #desctiption_checkbox:checked ~ .book_description blockquote {
+      max-height: none;
+      opacity: 1;
+    }
+  }
+}
+
+.download_section {
+  margin: 1rem 1rem 5rem 1rem;
+  flex: 0 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-colored);
+  transition: all 0.5s;
+  cursor: pointer;
+  .content {
+    padding: 1rem;
+    display: flex;
+    border-left: 1px solid #fff;
+    overflow: hidden;
+    position: relative;
+    &::after {
+      transition: all 0.8s;
+      position: absolute;
+      content: "";
+      top: -10%;
+      width: 5%;
+      left: 0%;
+      bottom: -10%;
+      background-color: #fff;
+      z-index: -1;
+    }
+  }
+
+  p {
+    font-weight: 800;
+  }
+  a {
+    color: unset;
+    display: flex;
+  }
+  .fa {
+    padding: 5px;
+    font-size: 2rem;
+  }
+  .content:hover,
+  .content:focus {
+    color: black;
+    mix-blend-mode: exclusion;
+    &::after {
+      width: 100%;
+    }
+  }
+}
